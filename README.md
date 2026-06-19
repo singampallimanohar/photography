@@ -58,22 +58,6 @@ A world-class, production-ready photography studio website built with **HTML5, C
 
 ---
 
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| HTML5 | Semantic structure & content |
-| CSS3 | Custom styling, animations, glassmorphism |
-| JavaScript (ES6+) | Interactivity & dynamic features |
-| Bootstrap 5.3.3 | Grid system, components, responsive utilities |
-| Google Fonts | Playfair Display & Poppins typography |
-| Font Awesome 6.5 | Icon library |
-| Bootstrap Icons | Additional icon set |
-| Unsplash | High-quality placeholder images |
-
-
----
-
 
 ## 📝 License
 
