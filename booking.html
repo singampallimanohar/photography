@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book a Session | LensCraft Studio</title>
+    <meta name="description" content="Book your photography or videography session with LensCraft Studio. Professional services for weddings, portraits, products, events, and fashion. Customize your session today.">
+    <meta name="keywords" content="book photographer, session reservation, wedding photography booking, portrait photography book, professional videography booking">
+    <meta name="author" content="LensCraft Studio">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Book a Session | LensCraft Studio">
+    <meta property="og:description" content="Secure your photography session with LensCraft Studio. Professional packages for portraits, weddings, and commercial photography.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lenscraftstudio.com/booking.html">
+    <meta property="og:image" content="images/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book a Session | LensCraft Studio">
+    <meta name="twitter:description" content="Secure your session with our award-winning photographers today.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- CDN Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen"><div class="loader-content"><div class="spinner"></div><p class="loader-text">LensCraft Studio</p></div></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-camera-retro me-2"></i>LensCraft</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="booking.html" class="btn btn-gold active">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== Page Hero ======================== -->
+    <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80');" aria-label="Booking page hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal">Book Your Session</h1>
+            <p class="hero-subtitle reveal reveal-delay-1">Let's craft your unique visual story together</p>
+        </div>
+    </section>
+
+    <!-- ======================== Booking Section ======================== -->
+    <section class="section-padding bg-darker-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle reveal">RESERVE YOUR SESSION</p>
+                <h2 class="section-title reveal">Session Booking Request</h2>
+                <div class="section-divider reveal"></div>
+            </div>
+            <div class="row g-5">
+                <!-- Booking Form -->
+                <div class="col-lg-7 reveal">
+                    <!-- Success Alert -->
+                    <div class="alert alert-success" id="bookingSuccess" style="display:none; border-radius:15px; background:rgba(212,175,55,.1); border-color:#d4af37; color:#d4af37;" role="alert">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Thank you!</strong> Thank you for your booking request. Our team will contact you shortly.
+                    </div>
+
+                    <!-- Error Alert -->
+                    <div class="alert alert-danger" id="bookingError" style="display:none; border-radius:15px;" role="alert">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        Please fill in all required fields correctly.
+                    </div>
+
+                                        <form id="bookingForm" action="https://formsubmit.co/vivekvakapalli23@gmail.com" method="POST" class="contact-form">
+                        <!-- Hidden Settings -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New LensCraft Studio Booking Request">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="row g-3">
+                            <!-- Name -->
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name <span class="gold-text">*</span></label>
+                                <input type="text" class="form-control" id="bookingName" name="name" placeholder="Your Full Name" required minlength="2">
+                            </div>
+
+                            <!-- Mobile Number -->
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile Number <span class="gold-text">*</span></label>
+                                <input type="tel" class="form-control" id="bookingPhone" name="phone" placeholder="+91 98765 43210" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address <span class="gold-text">*</span></label>
+                                <input type="email" class="form-control" id="bookingEmail" name="email" placeholder="your@email.com" required>
+                            </div>
+
+                            <!-- Photography Service -->
+                            <div class="col-md-6">
+                                <label class="form-label">Photography Service <span class="gold-text">*</span></label>
+                                <select class="form-select" id="bookingEventType" name="event_type" required>
+                                    <option value="">Select Service</option>
+                                    <option value="Wedding Photography">Wedding Photography (₹25,000 – ₹75,000)</option>
+                                    <option value="Pre-Wedding Shoot">Pre-Wedding Shoot (₹10,000 – ₹30,000)</option>
+                                    <option value="Birthday & Events">Birthday & Events (₹8,000 – ₹20,000)</option>
+                                    <option value="Portrait Session">Portrait Session (₹3,000 – ₹10,000)</option>
+                                    <option value="Corporate Photography">Corporate Photography (₹15,000 – ₹50,000)</option>
+                                    <option value="Videography">Videography (₹20,000 – ₹60,000)</option>
+                                    <option value="Other">Other Service</option>
+                                </select>
+                            </div>
+
+                            <!-- Package Selection -->
+                            <div class="col-md-6">
+                                <label class="form-label">Package Selection <span class="gold-text">*</span></label>
+                                <select class="form-select" id="bookingPackage" name="package" required>
+                                    <option value="">Select Package</option>
+                                    <option value="Silver Package">Silver Package (Base tier)</option>
+                                    <option value="Gold Package">Gold Package (Standard tier)</option>
+                                    <option value="Platinum Package">Platinum Package (Premium tier)</option>
+                                    <option value="Custom Package / Quote">Custom Package / Quote</option>
+                                </select>
+                            </div>
+
+                            <!-- Event Date -->
+                            <div class="col-md-6">
+                                <label class="form-label">Event Date <span class="gold-text">*</span></label>
+                                <input type="date" class="form-control" id="bookingDate" name="event_date" required>
+                            </div>
+
+                            <!-- Event Start Time -->
+                            <div class="col-md-4">
+                                <label class="form-label">Event Start Time <span class="gold-text">*</span></label>
+                                <input type="time" class="form-control" id="bookingStartTime" name="start_time" required>
+                            </div>
+
+                            <!-- Event End Time -->
+                            <div class="col-md-4">
+                                <label class="form-label">Event End Time <span class="gold-text">*</span></label>
+                                <input type="time" class="form-control" id="bookingEndTime" name="end_time" required>
+                            </div>
+
+                            <!-- Number of Guests -->
+                            <div class="col-md-4">
+                                <label class="form-label">Number of Guests <span class="gold-text">*</span></label>
+                                <input type="number" class="form-control" id="bookingGuestsCount" name="guests_count" min="1" placeholder="e.g. 50" required>
+                            </div>
+
+                            <!-- Event Venue -->
+                            <div class="col-12">
+                                <label class="form-label">Event Venue / Location <span class="gold-text">*</span></label>
+                                <input type="text" class="form-control" id="bookingLocation" name="event_location" placeholder="e.g. Hyderabad, Telangana" required>
+                            </div>
+
+                            <!-- Special Requirements -->
+                            <div class="col-12">
+                                <label class="form-label">Special Requirements</label>
+                                <textarea class="form-control" id="bookingMessage" name="message" rows="4" placeholder="Tell us more about your event, timeline, or specific requests..."></textarea>
+                            </div>
+
+                            <!-- Price Estimate Box -->
+                            <div class="col-12">
+                                <div id="priceEstimateBox" class="glass-card text-center p-3 mb-3" style="display: none; border: 1px solid var(--gold); background: rgba(212, 175, 55, 0.08);">
+                                    <h5 class="mb-1"><i class="fas fa-calculator gold-text me-2"></i>Estimated Investment</h5>
+                                    <h3 id="estimatedPrice" class="gold-text mb-0">₹0</h3>
+                                    <p class="small text-muted mb-0 mt-1">*Final quote will be customized and confirmed during consultation.</p>
+                                </div>
+                            </div>
+
+                            <!-- Privacy check -->
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="bookingPrivacyCheck" required>
+                                    <label class="form-check-label text-muted">I agree to the Privacy Policy & Terms of Service.</label>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-gold w-100">
+                                    <i class="fas fa-calendar-check me-2"></i>Request Booking
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                                <!-- Process & Sidebar -->
+                <div class="col-lg-5 reveal reveal-delay-1">
+                    <div style="position: sticky; top: 100px;">
+                        <div class="glass-card mb-4">
+                            <h5 class="mb-3"><i class="fas fa-magic gold-text me-2"></i>Our Booking Process</h5>
+                            <ul class="about-list mb-0">
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> <strong>1. Request:</strong> Submit this details form.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> <strong>2. Consultation:</strong> We reply within 24 hours.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle me-2"></i> <strong>3. Reservation:</strong> Finalize packages and date.</li>
+                                <li><i class="fas fa-check-circle me-2"></i> <strong>4. Session:</strong> Capture your precious moments!</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <h5 class="mb-3"><i class="fas fa-address-book gold-text me-2"></i>Studio Contact</h5>
+                            <p class="mb-2"><i class="fas fa-phone gold-text me-2"></i>Call: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                            <p class="mb-2"><i class="fas fa-envelope gold-text me-2"></i>Email: <a href="mailto:info@lenscraftstudio.com">info@lenscraftstudio.in</a></p>
+                            <p class="mb-0"><i class="fas fa-map-marker-alt gold-text me-2"></i>rajahmundry, Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== Newsletter Section ======================== -->
+    <section class="newsletter-section section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title reveal">Stay Connected</h2>
+                <p class="text-muted mb-4 reveal">Subscribe for photography tips, exclusive offers, and behind-the-scenes updates from our studio</p>
+                <form class="newsletter-form reveal" aria-label="Newsletter subscription">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required>
+                        <button class="btn btn-gold" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CTA Section ======================== -->
+    <section class="cta-section" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="cta-content">
+            <h2 class="reveal">Ready to Start Your Journey?</h2>
+            <p class="reveal reveal-delay-1">Don't wait — the best moments deserve the best photographer. Let's create something unforgettable together</p>
+            <div class="reveal reveal-delay-2">
+                <a href="tel:+919876543210" class="btn btn-gold me-2"><i class="fas fa-phone me-2"></i>Call Us Now</a>
+                <a href="mailto:info@lenscraftstudio.in" class="btn btn-gold-outline"><i class="fas fa-envelope me-2"></i>Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h3 class="footer-brand"><i class="fas fa-camera-retro me-2"></i>LensCraft</h3>
+                    <p class="text-muted">Award-winning photography studio crafting timeless visual stories since 2010. We turn moments into masterpieces.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="services.html">Wedding Photography</a></li>
+                        <li><a href="services.html">Portrait Sessions</a></li>
+                        <li><a href="services.html">Fashion Photography</a></li>
+                        <li><a href="services.html">Product Photography</a></li>
+                        <li><a href="services.html">Videography</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li><i class="fas fa-map-marker-alt me-2 gold-text"></i> Art District, Hyderabad, Telangana, India</li>
+                        <li><i class="fas fa-phone me-2 gold-text"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope me-2 gold-text"></i> info@lenscraftstudio.in</li>
+                        <li><i class="fas fa-clock me-2 gold-text"></i> Mon - Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 LensCraft Studio. All Rights Reserved. | Crafted with <i class="fas fa-heart gold-text"></i> for Visual Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

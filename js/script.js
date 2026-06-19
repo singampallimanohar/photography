@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGalleryFilter();
     initLightbox();
     initContactFormValidation();
+    initBookingFormValidation();
     initNewsletterForm();
     initParallaxEffect();
     initMobileNavClose();
@@ -378,9 +379,59 @@ function initContactFormValidation() {
         if (successAlert) successAlert.style.display = 'none';
         if (errorAlert) errorAlert.style.display = 'none';
 
-        // Check HTML5 validation (native minlength, pattern, required)
-        if (!form.checkValidity()) {
-            e.stopPropagation();
+        // Manual validation checks
+        let isValid = true;
+
+        // Reset validation states
+        form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+        // Validate Name
+        const name = form.querySelector('#contactName');
+        if (name && (name.value.trim().length < 2)) {
+            name.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Email
+        const email = form.querySelector('#contactEmail');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email.value.trim())) {
+            email.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Phone (optional, but if provided must be valid format)
+        const phone = form.querySelector('#contactPhone');
+        if (phone && phone.value.trim() !== '') {
+            const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$/;
+            if (!phoneRegex.test(phone.value.trim())) {
+                phone.classList.add('is-invalid');
+                isValid = false;
+            }
+        }
+
+        // Validate Subject
+        const subject = form.querySelector('#contactSubject');
+        if (subject && subject.value.trim() === '') {
+            subject.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Message
+        const message = form.querySelector('#contactMessage');
+        if (message && message.value.trim().length < 10) {
+            message.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Privacy Checkbox
+        const privacy = form.querySelector('#privacyCheck');
+        if (privacy && !privacy.checked) {
+            privacy.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!isValid) {
             form.classList.add("was-validated");
             if (errorAlert) {
                 errorAlert.style.display = 'block';
@@ -531,6 +582,263 @@ function initMobileNavClose() {
             if (window.innerWidth < 992 && navCollapse.classList.contains('show')) {
                 navToggler.click();
             }
+        });
+    });
+}
+
+/* ========================
+   15. Booking Form Validation & Query Parameter Select
+   ======================== */
+function initBookingFormValidation() {
+    const form = document.getElementById("bookingForm");
+    if (!form) return;
+
+    const successAlert = document.getElementById("bookingSuccess");
+    const errorAlert = document.getElementById("bookingError");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtnText = submitBtn ? submitBtn.innerHTML : 'Request Booking';
+
+    // Dynamic Price Estimation Matrix
+    const priceMatrix = {
+        "Wedding Photography": { "Silver Package": 25000, "Gold Package": 50000, "Platinum Package": 75000 },
+        "Pre-Wedding Shoot": { "Silver Package": 10000, "Gold Package": 20000, "Platinum Package": 30000 },
+        "Birthday & Events": { "Silver Package": 8000, "Gold Package": 14000, "Platinum Package": 20000 },
+        "Portrait Session": { "Silver Package": 3000, "Gold Package": 6500, "Platinum Package": 10000 },
+        "Corporate Photography": { "Silver Package": 15000, "Gold Package": 30000, "Platinum Package": 50000 },
+        "Videography": { "Silver Package": 20000, "Gold Package": 40000, "Platinum Package": 60000 },
+        "Other": { "Silver Package": 10000, "Gold Package": 25000, "Platinum Package": 40000 }
+    };
+
+    const updatePriceEstimate = () => {
+        const service = form.querySelector('#bookingEventType').value;
+        const packageTier = form.querySelector('#bookingPackage').value;
+        const estimateBox = document.getElementById('priceEstimateBox');
+        const estimateText = document.getElementById('estimatedPrice');
+
+        if (!estimateBox || !estimateText) return;
+
+        if (service && packageTier) {
+            estimateBox.style.display = 'block';
+            if (packageTier === 'Custom Package / Quote') {
+                estimateText.textContent = 'Custom Quote Requested';
+            } else if (priceMatrix[service] && priceMatrix[service][packageTier]) {
+                const price = priceMatrix[service][packageTier];
+                estimateText.textContent = '₹' + price.toLocaleString('en-IN');
+            } else {
+                estimateText.textContent = 'Contact for Pricing';
+            }
+        } else {
+            estimateBox.style.display = 'none';
+        }
+    };
+
+    form.querySelector('#bookingEventType').addEventListener('change', updatePriceEstimate);
+    form.querySelector('#bookingPackage').addEventListener('change', updatePriceEstimate);
+
+    // 1. Check Query Parameters for auto-selection
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    const packageParam = urlParams.get('package');
+
+    if (serviceParam) {
+        const serviceSelect = form.querySelector('#bookingEventType');
+        if (serviceSelect) {
+            // Find option matching the query parameter
+            const options = Array.from(serviceSelect.options);
+            const matchedOption = options.find(opt => opt.value.toLowerCase() === serviceParam.toLowerCase() || opt.text.toLowerCase() === serviceParam.toLowerCase() || opt.value.toLowerCase().startsWith(serviceParam.toLowerCase().substring(0, 5)));
+            if (matchedOption) {
+                serviceSelect.value = matchedOption.value;
+            }
+        }
+    }
+
+    if (packageParam) {
+        const packageSelect = form.querySelector('#bookingPackage');
+        if (packageSelect) {
+            const options = Array.from(packageSelect.options);
+            // Match substring or value
+            const matchedOption = options.find(opt => opt.value.toLowerCase().includes(packageParam.toLowerCase()) || opt.text.toLowerCase().includes(packageParam.toLowerCase()));
+            if (matchedOption) {
+                packageSelect.value = matchedOption.value;
+            }
+        }
+    }
+
+    // Trigger initial estimate if values exist on load
+    updatePriceEstimate();
+
+    // 2. Form submission handler
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Reset alert states
+        if (successAlert) successAlert.style.display = 'none';
+        if (errorAlert) errorAlert.style.display = 'none';
+
+        // Manual validation checks
+        let isValid = true;
+
+        // Reset validation states
+        form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+        // Validate Name
+        const name = form.querySelector('#bookingName');
+        if (name && (name.value.trim().length < 2)) {
+            name.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Email
+        const email = form.querySelector('#bookingEmail');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email.value.trim())) {
+            email.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Mobile Number (Indian Format)
+        const phone = form.querySelector('#bookingPhone');
+        const phoneRegex = /^(\+91[\-\s]?)?[0]?(91)?[6-9]\d{9}$/;
+        if (phone && (!phoneRegex.test(phone.value.trim().replace(/\s/g, '')) || phone.value.trim() === '')) {
+            phone.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Event Type
+        const eventType = form.querySelector('#bookingEventType');
+        if (eventType && eventType.value === '') {
+            eventType.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Package
+        const selectedPackage = form.querySelector('#bookingPackage');
+        if (selectedPackage && selectedPackage.value === '') {
+            selectedPackage.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Event Date
+        const eventDate = form.querySelector('#bookingDate');
+        if (eventDate && eventDate.value === '') {
+            eventDate.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Event Start & End Time
+        const startTime = form.querySelector('#bookingStartTime');
+        if (startTime && startTime.value === '') {
+            startTime.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        const endTime = form.querySelector('#bookingEndTime');
+        if (endTime && endTime.value === '') {
+            endTime.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Number of Guests
+        const guests = form.querySelector('#bookingGuestsCount');
+        if (guests && (guests.value === '' || parseInt(guests.value, 10) < 1)) {
+            guests.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Venue Location
+        const location = form.querySelector('#bookingLocation');
+        if (location && location.value.trim() === '') {
+            location.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Validate Privacy Checkbox
+        const privacy = form.querySelector('#bookingPrivacyCheck');
+        if (privacy && !privacy.checked) {
+            privacy.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            form.classList.add("was-validated");
+            if (errorAlert) {
+                errorAlert.style.display = 'block';
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+
+        form.classList.add("was-validated");
+
+        // Submit via AJAX
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Submitting...';
+        }
+
+        const formData = {
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            photography_service: eventType.value,
+            package_selection: selectedPackage.value,
+            event_date: eventDate.value,
+            start_time: startTime.value,
+            end_time: endTime.value,
+            guests_count: guests.value,
+            event_venue: location.value,
+            special_requirements: form.querySelector('#bookingMessage')?.value || ''
+        };
+
+        const actionUrl = form.getAttribute('action') || 'https://formsubmit.co/vivekvakapalli23@gmail.com';
+        const ajaxUrl = actionUrl.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
+        fetch(ajaxUrl, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Server error');
+            }
+        })
+        .then(data => {
+            if (successAlert) {
+                successAlert.innerHTML = '<i class="fas fa-check-circle me-2"></i><strong>🎉 Booking Request Submitted Successfully!</strong><br><br>Thank you for choosing LensCraft Studio.<br>Our team will contact you within 24 hours to confirm your booking.';
+                successAlert.style.display = 'block';
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            form.reset();
+            form.classList.remove("was-validated");
+            updatePriceEstimate();
+        })
+        .catch(error => {
+            console.error('Booking submission error:', error);
+            if (errorAlert) {
+                errorAlert.textContent = "There was an error submitting your booking request. Please try again later.";
+                errorAlert.style.display = 'block';
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        })
+        .finally(() => {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = submitBtnText;
+            }
+        });
+    });
+
+    // Real-time validation feedback
+    form.querySelectorAll('.form-control, .form-select, .form-check-input').forEach(input => {
+        input.addEventListener('input', () => {
+            input.classList.remove('is-invalid');
+            if (errorAlert) errorAlert.style.display = 'none';
         });
     });
 }
