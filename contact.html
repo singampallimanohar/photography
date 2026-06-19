@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LensCraft Studio</title>
+    <meta name="description" content="Get in touch with LensCraft Studio. Book a photography session, request a quote, or visit our studio. We'd love to hear from you.">
+    <meta property="og:title" content="Contact Us | LensCraft Studio">
+    <meta property="og:description" content="Book a session or reach out to our team. We'd love to hear from you.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen"><div class="loader-content"><div class="spinner"></div><p class="loader-text">LensCraft Studio</p></div></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-camera-retro me-2"></i>LensCraft</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-gold">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== Page Hero ======================== -->
+    <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80');" aria-label="Contact page hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <nav class="page-breadcrumb" aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">Contact</li></ol></nav>
+            <h1 class="hero-title reveal">Contact Us</h1>
+            <p class="hero-subtitle reveal reveal-delay-1">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- ======================== Contact Info Cards ======================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 reveal reveal-delay-1">
+                    <div class="glass-card text-center">
+                        <div class="card-icon mx-auto"><i class="fas fa-map-marker-alt"></i></div>
+                        <h5>Visit Us</h5>
+                        <p>123 Creative Avenue<br>Art District, New York<br>NY 10001</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal reveal-delay-2">
+                    <div class="glass-card text-center">
+                        <div class="card-icon mx-auto"><i class="fas fa-phone"></i></div>
+                        <h5>Call Us</h5>
+                        <p><a href="tel:+15551234567">+1 (555) 123-4567</a><br><a href="tel:+15559876543">+1 (555) 987-6543</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal reveal-delay-3">
+                    <div class="glass-card text-center">
+                        <div class="card-icon mx-auto"><i class="fas fa-envelope"></i></div>
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:hello@lenscraftstudio.com">hello@lenscraftstudio.com</a><br><a href="mailto:bookings@lenscraftstudio.com">bookings@lenscraftstudio.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal reveal-delay-4">
+                    <div class="glass-card text-center">
+                        <div class="card-icon mx-auto"><i class="fas fa-clock"></i></div>
+                        <h5>Business Hours</h5>
+                        <p>Mon - Fri: 9AM - 7PM<br>Saturday: 10AM - 5PM<br>Sunday: By Appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== Contact Form & Map ======================== -->
+    <section class="section-padding bg-darker-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle reveal">GET IN TOUCH</p>
+                <h2 class="section-title reveal">Send Us a Message</h2>
+                <div class="section-divider reveal"></div>
+            </div>
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-7 reveal">
+
+    <!-- Success Alert -->
+    <div class="alert alert-success"
+        id="formSuccess"
+        style="display:none; border-radius:15px; background:rgba(212,175,55,.1); border-color:#d4af37; color:#d4af37;"
+        role="alert">
+        <i class="fas fa-check-circle me-2"></i>
+        <strong>Thank you!</strong> Your message has been sent successfully.
+    </div>
+
+    <!-- Error Alert -->
+    <div class="alert alert-danger"
+        id="formError"
+        style="display:none; border-radius:15px;"
+        role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i>
+        Please fill in all required fields correctly.
+    </div>
+
+    <!-- Contact Form -->
+    <form
+        id="contactForm"
+        action="https://formsubmit.co/vivekvakapalli23@gmail.com"
+        method="POST"
+        class="contact-form">
+
+        <!-- Hidden Settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New LensCraft Studio Contact Form Submission">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
+        <div class="row g-3">
+
+            <!-- Name -->
+            <div class="col-md-6">
+                <label class="form-label">
+                    Full Name <span class="gold-text">*</span>
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="contactName"
+                    name="name"
+                    placeholder="Your Full Name"
+                    minlength="2"
+                    required>
+                <div class="invalid-feedback">Please enter your name (at least 2 characters).</div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+                <label class="form-label">
+                    Email Address <span class="gold-text">*</span>
+                </label>
+                <input
+                    type="email"
+                    class="form-control"
+                    id="contactEmail"
+                    name="email"
+                    placeholder="your@email.com"
+                    required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-md-6">
+                <label class="form-label">
+                    Phone Number
+                </label>
+                <input
+                    type="tel"
+                    class="form-control"
+                    id="contactPhone"
+                    name="phone"
+                    placeholder="+91 9876543210"
+                    pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$">
+                <div class="invalid-feedback">Please enter a valid phone number.</div>
+            </div>
+
+            <!-- Subject -->
+            <div class="col-md-6">
+                <label class="form-label">
+                    Subject <span class="gold-text">*</span>
+                </label>
+
+                <select
+                    class="form-select"
+                    id="contactSubject"
+                    name="subject"
+                    required>
+
+                    <option value="">Select Subject</option>
+                    <option>General Inquiry</option>
+                    <option>Book a Session</option>
+                    <option>Wedding Photography</option>
+                    <option>Portrait Session</option>
+                    <option>Commercial Photography</option>
+                    <option>Other</option>
+
+                </select>
+                <div class="invalid-feedback">Please select a subject.</div>
+            </div>
+
+            <!-- Service -->
+            <div class="col-12">
+                <label class="form-label">
+                    Service Interest
+                </label>
+
+                <select
+                    class="form-select"
+                    id="contactService"
+                    name="service">
+
+                    <option value="">Select Service</option>
+                    <option>Wedding Photography</option>
+                    <option>Portrait Photography</option>
+                    <option>Fashion Photography</option>
+                    <option>Product Photography</option>
+                    <option>Corporate Photography</option>
+                    <option>Event Photography</option>
+                    <option>Videography</option>
+
+                </select>
+            </div>
+
+            <!-- Message -->
+            <div class="col-12">
+                <label class="form-label">
+                    Message <span class="gold-text">*</span>
+                </label>
+
+                <textarea
+                    class="form-control"
+                    id="contactMessage"
+                    name="message"
+                    rows="5"
+                    placeholder="Tell us about your project..."
+                    minlength="10"
+                    required></textarea>
+                <div class="invalid-feedback">Please enter a message (at least 10 characters).</div>
+            </div>
+
+            <!-- Privacy -->
+            <div class="col-12">
+
+                <div class="form-check">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="privacyCheck"
+                        required>
+
+                    <label class="form-check-label" for="privacyCheck">
+                        I agree to the Privacy Policy &
+                        Terms of Service.
+                    </label>
+                    <div class="invalid-feedback">You must agree to the terms and privacy policy.</div>
+
+                </div>
+
+            </div>
+
+            <!-- Submit -->
+            <div class="col-12">
+
+                <button
+                    type="submit"
+                    class="btn btn-gold w-100">
+
+                    <i class="fas fa-paper-plane me-2"></i>
+
+                    Send Message
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+                <!-- Map & Quick Info -->
+                <div class="col-lg-5 reveal reveal-delay-1">
+                    <div style="position: sticky; top: 100px;">
+                        <div class="map-container mb-4" style="height: 280px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076797932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="100%" style="border:0; border-radius:20px;" allowfullscreen="" loading="lazy" title="LensCraft Studio Location Map"></iframe>
+                        </div>
+                        <div class="glass-card mb-4">
+                            <h5 class="mb-3"><i class="fas fa-info-circle gold-text me-2"></i>Quick Contact</h5>
+                            <p class="mb-2"><i class="fas fa-phone gold-text me-2"></i><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            <p class="mb-2"><i class="fas fa-envelope gold-text me-2"></i><a href="mailto:hello@lenscraftstudio.com">hello@lenscraftstudio.com</a></p>
+                            <p class="mb-2"><i class="fas fa-map-marker-alt gold-text me-2"></i>123 Creative Avenue, NY 10001</p>
+                            <p class="mb-0"><i class="fas fa-clock gold-text me-2"></i>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                        </div>
+                        <div class="glass-card" style="height: auto;">
+                            <h5 class="mb-3"><i class="fas fa-star gold-text me-2"></i>Why Contact Us?</h5>
+                            <ul class="about-list mb-0">
+                                <li><i class="fas fa-check-circle"></i> Free initial consultation</li>
+                                <li><i class="fas fa-check-circle"></i> Custom packages available</li>
+                                <li><i class="fas fa-check-circle"></i> Response within 24 hours</li>
+                                <li><i class="fas fa-check-circle"></i> Flexible scheduling options</li>
+                                <li><i class="fas fa-check-circle"></i> No obligation quote</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FAQ Section ======================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle reveal">FAQ</p>
+                <h2 class="section-title reveal">Common Questions</h2>
+                <div class="section-divider reveal"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-accordion reveal" id="contactFAQ">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1" aria-expanded="true">How quickly do you respond to inquiries?</button></h2>
+                            <div id="cfaq1" class="accordion-collapse collapse show" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">We respond to all inquiries within 24 hours on business days. For urgent requests, please call us directly at +1 (555) 123-4567. We also offer same-day consultations for wedding inquiries during peak booking season.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">Can I visit the studio before booking?</button></h2>
+                            <div id="cfaq2" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">Absolutely! We welcome studio tours by appointment. It's a great opportunity to see our equipment, discuss your vision in person, and get a feel for our creative space. Simply call or email us to schedule a visit at a time that works for you.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">Do you offer virtual consultations?</button></h2>
+                            <div id="cfaq3" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">Yes! We offer complimentary virtual consultations via Zoom or Google Meet. This is especially convenient for destination wedding clients or those with busy schedules. We'll walk you through our portfolio, discuss your vision, and answer all your questions from the comfort of your home.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq4">What is the booking deposit?</button></h2>
+                            <div id="cfaq4" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">A 30% non-refundable deposit is required to secure your booking date. The remaining balance can be paid in flexible installments leading up to your session. We accept all major credit cards, bank transfers, and PayPal for your convenience.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq5">How do I prepare for my photography session?</button></h2>
+                            <div id="cfaq5" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">After booking, you'll receive our comprehensive preparation guide covering wardrobe tips, grooming advice, and what to expect on the day. We recommend getting plenty of rest, staying hydrated, and bringing 2-3 outfit changes. Most importantly, come ready to have fun — we'll handle the rest!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== Social Media Section ======================== -->
+    <section class="section-padding bg-darker-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle reveal">FOLLOW US</p>
+                <h2 class="section-title reveal">Connect on Social Media</h2>
+                <div class="section-divider reveal"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-2 col-md-4 col-6 reveal reveal-delay-1">
+                    <a href="#" class="text-decoration-none">
+                        <div class="social-card">
+                            <i class="fab fa-facebook-f"></i>
+                            <h5>Facebook</h5>
+                            <p>@lenscraftstudio</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 reveal reveal-delay-2">
+                    <a href="#" class="text-decoration-none">
+                        <div class="social-card">
+                            <i class="fab fa-instagram"></i>
+                            <h5>Instagram</h5>
+                            <p>@lenscraftstudio</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 reveal reveal-delay-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class="social-card">
+                            <i class="fab fa-twitter"></i>
+                            <h5>Twitter</h5>
+                            <p>@lenscraftstudio</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 reveal reveal-delay-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="social-card">
+                            <i class="fab fa-pinterest-p"></i>
+                            <h5>Pinterest</h5>
+                            <p>@lenscraftstudio</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 reveal reveal-delay-1">
+                    <a href="#" class="text-decoration-none">
+                        <div class="social-card">
+                            <i class="fab fa-youtube"></i>
+                            <h5>YouTube</h5>
+                            <p>LensCraft Studio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== Newsletter Section ======================== -->
+    <section class="newsletter-section section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title reveal">Stay Connected</h2>
+                <p class="text-muted mb-4 reveal">Subscribe for photography tips, exclusive offers, and behind-the-scenes updates from our studio</p>
+                <form class="newsletter-form reveal" aria-label="Newsletter subscription">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required>
+                        <button class="btn btn-gold" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CTA Section ======================== -->
+    <section class="cta-section" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="cta-content">
+            <h2 class="reveal">Ready to Start Your Journey?</h2>
+            <p class="reveal reveal-delay-1">Don't wait — the best moments deserve the best photographer. Let's create something unforgettable together</p>
+            <div class="reveal reveal-delay-2">
+                <a href="tel:+15551234567" class="btn btn-gold me-2"><i class="fas fa-phone me-2"></i>Call Us Now</a>
+                <a href="mailto:hello@lenscraftstudio.com" class="btn btn-gold-outline"><i class="fas fa-envelope me-2"></i>Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h3 class="footer-brand"><i class="fas fa-camera-retro me-2"></i>LensCraft</h3>
+                    <p class="text-muted">Award-winning photography studio crafting timeless visual stories since 2010. We turn moments into masterpieces.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="services.html">Wedding Photography</a></li>
+                        <li><a href="services.html">Portrait Sessions</a></li>
+                        <li><a href="services.html">Fashion Photography</a></li>
+                        <li><a href="services.html">Product Photography</a></li>
+                        <li><a href="services.html">Videography</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="footer-heading">Contact Info</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li><i class="fas fa-map-marker-alt me-2 gold-text"></i> 123 Creative Avenue, Art District, NY 10001</li>
+                        <li><i class="fas fa-phone me-2 gold-text"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2 gold-text"></i> hello@lenscraftstudio.com</li>
+                        <li><i class="fas fa-clock me-2 gold-text"></i> Mon - Sat: 9:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 LensCraft Studio. All Rights Reserved. | Crafted with <i class="fas fa-heart gold-text"></i> for Visual Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

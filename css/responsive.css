@@ -1,0 +1,428 @@
+/* ============================================================
+   LensCraft Studio - Responsive Stylesheet
+   responsive.css | Media Queries for all breakpoints
+   ============================================================ */
+
+/* ========================
+   Large Desktops (max-width: 1200px)
+   ======================== */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .counter-number {
+        font-size: 2.5rem;
+    }
+
+    .cta-section h2 {
+        font-size: 2.4rem;
+    }
+
+    .pricing-card .price {
+        font-size: 2.8rem;
+    }
+
+    .carousel-control-prev {
+        left: -30px;
+    }
+
+    .carousel-control-next {
+        right: -30px;
+    }
+}
+
+/* ========================
+   Tablets & Small Laptops (max-width: 992px)
+   ======================== */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+        background-attachment: scroll;
+    }
+
+    .page-hero {
+        min-height: 50vh;
+        background-attachment: scroll;
+    }
+
+    .page-hero .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    /* Mobile Navbar */
+    .navbar-collapse {
+        background: rgba(17, 17, 17, 0.98);
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 15px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+    }
+
+    .nav-link {
+        padding: 10px 15px !important;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .btn-gold.ms-lg-3 {
+        margin-top: 15px;
+        margin-left: 0 !important;
+        display: block;
+        text-align: center;
+    }
+
+    /* Timeline - single column */
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 65px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+
+    .timeline-item .timeline-dot {
+        left: 22px !important;
+        right: auto !important;
+    }
+
+    /* Pricing */
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-card.featured:hover {
+        transform: translateY(-10px);
+    }
+
+    /* Carousel Controls */
+    .carousel-control-prev {
+        left: 5px;
+    }
+
+    .carousel-control-next {
+        right: 5px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Instagram Grid */
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Counter */
+    .counter-number {
+        font-size: 2.2rem;
+    }
+
+    /* CTA */
+    .cta-section {
+        background-attachment: scroll;
+        padding: 70px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    /* Parallax disable on tablet/mobile for performance */
+    .parallax-bg,
+    .counter-section {
+        background-attachment: scroll;
+    }
+
+    /* Map */
+    .map-container {
+        height: 300px;
+        margin-top: 30px;
+    }
+}
+
+/* ========================
+   Small Tablets & Large Phones (max-width: 768px)
+   ======================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .glass-card {
+        padding: 30px 20px;
+    }
+
+    .counter-number {
+        font-size: 2rem;
+    }
+
+    .counter-label {
+        font-size: 0.75rem;
+    }
+
+    .pricing-card .price {
+        font-size: 2.5rem;
+    }
+
+    .pricing-card {
+        padding: 35px 25px;
+    }
+
+    .footer-brand {
+        margin-bottom: 20px;
+    }
+
+    .main-footer {
+        padding-top: 60px;
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    .testimonial-card .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .team-card .team-img-wrapper {
+        height: 250px;
+    }
+
+    .gallery-item img {
+        height: 250px;
+    }
+
+    .page-hero .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 250px;
+    }
+
+    .comparison-table {
+        overflow-x: auto;
+    }
+
+    .comparison-table .table {
+        min-width: 600px;
+    }
+}
+
+/* ========================
+   Mobile Phones (max-width: 576px)
+   ======================== */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        min-height: 70vh;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .btn-gold,
+    .btn-gold-outline {
+        padding: 10px 25px;
+        font-size: 0.8rem;
+    }
+
+    .gallery-filters .filter-btn {
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        margin: 3px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    .glass-card {
+        padding: 25px 15px;
+    }
+
+    .glass-card .card-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+
+    .counter-number {
+        font-size: 1.8rem;
+    }
+
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        font-size: 0.9rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .page-hero .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .page-hero {
+        min-height: 45vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-close {
+        font-size: 2rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 0.85rem;
+    }
+
+    .process-step .step-number {
+        width: 65px;
+        height: 65px;
+        font-size: 1.5rem;
+    }
+
+    .cta-section {
+        padding: 50px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-section p {
+        font-size: 0.95rem;
+    }
+
+    .newsletter-form .form-control {
+        border-radius: 50px;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-form .btn-gold {
+        border-radius: 50px;
+        width: 100%;
+    }
+
+    .newsletter-form .input-group {
+        flex-direction: column;
+    }
+
+    .scroll-indicator {
+        bottom: 25px;
+    }
+
+    .service-card .service-img-wrapper {
+        height: 180px;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+}
+
+/* ========================
+   Extra Small Phones (max-width: 400px)
+   ======================== */
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .pricing-card .price {
+        font-size: 2rem;
+    }
+
+    .testimonial-card .client-photo {
+        width: 60px;
+        height: 60px;
+    }
+}
