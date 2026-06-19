@@ -46,26 +46,6 @@ A world-class, production-ready photography studio website built with **HTML5, C
 
 ---
 
-## 📁 Project Structure
-
-```
-photostdio/
-├── index.html          # Home page
-├── about.html          # About page
-├── services.html       # Services page
-├── gallery.html        # Portfolio gallery
-├── contact.html        # Contact page
-├── css/
-│   ├── style.css       # Main stylesheet (~900 lines)
-│   └── responsive.css  # Media queries (~250 lines)
-├── js/
-│   └── script.js       # All JavaScript features (~350 lines)
-├── images/             # Image assets directory
-└── README.md           # Project documentation
-```
-
----
-
 ## 📄 Pages
 
 | Page | Description |
@@ -91,68 +71,18 @@ photostdio/
 | Bootstrap Icons | Additional icon set |
 | Unsplash | High-quality placeholder images |
 
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- No server, build tools, or package manager required
-
-### Installation
-
-1. **Clone or download** the project:
-   ```bash
-   git clone https://github.com/yourusername/lenscraft-studio.git
-   ```
-
-2. **Open** `index.html` in your browser:
-   - Double-click `index.html`, or
-   - Use a local dev server like VS Code Live Server
-
-3. **That's it!** The website uses CDN links for all external resources, so no installation or build step is needed.
 
 ---
 
-## 🎨 Color Palette
-
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Dark Primary | `#111111` | Background primary |
-| Dark Secondary | `#1A1A1A` | Background alternate |
-| Gold | `#D4AF37` | Accent, buttons, highlights |
-| Gold Light | `#E5C76B` | Hover states, gradients |
-| White | `#FFFFFF` | Headings, primary text |
-| Light Gray | `#F8F9FA` | Subtle backgrounds |
-| Muted Text | `#AAAAAA` | Secondary text, descriptions |
-
----
-
-## 📱 Responsive Breakpoints
-
-| Breakpoint | Target |
-|------------|--------|
-| `> 1200px` | Large desktops |
-| `992px - 1200px` | Desktops |
-| `768px - 992px` | Tablets |
-| `576px - 768px` | Large phones |
-| `< 576px` | Mobile phones |
-| `< 400px` | Extra small phones |
-
----
 
 ## 📝 License
 
 This project is licensed under the **MIT License** — feel free to use, modify, and distribute for personal and commercial purposes.
 
 ---
+## Live Demo
 
-## 🙏 Credits
-
-- **Images**: [Unsplash](https://unsplash.com) (free high-quality photography)
-- **Icons**: [Font Awesome](https://fontawesome.com) & [Bootstrap Icons](https://icons.getbootstrap.com)
-- **Fonts**: [Google Fonts](https://fonts.google.com) (Playfair Display, Poppins)
-- **Framework**: [Bootstrap 5](https://getbootstrap.com)
+🌐 Website: https://manohar-photography.netlify.app/
 
 ---
 
